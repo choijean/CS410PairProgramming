@@ -15,13 +15,13 @@ import static org.hamcrest.core.StringContains.containsString;
 public class StudentIT extends InvokeMainTestCase {
   @Test
   public void invokingMainWithNoArgumentsHasExitCodeOf1() {
-    InvokeMainTestCase.MainMethodResult result = invokeMain(Student.class);
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Leapyear.class);
     assertThat(result.getExitCode(), equalTo(1));
   }
 
   @Test
   public void invokingMainWithNoArgumentsPrintsMissingArgumentsToStandardError() {
-    InvokeMainTestCase.MainMethodResult result = invokeMain(Student.class);
+    InvokeMainTestCase.MainMethodResult result = invokeMain(Leapyear.class);
     assertThat(result.getTextWrittenToStandardError(), containsString("Missing command line arguments"));
   }
 
